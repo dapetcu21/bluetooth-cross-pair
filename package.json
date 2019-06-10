@@ -1,0 +1,15 @@
+{
+  "name": "bluetooth-cross-pair",
+  "version": "1.0.0",
+  "description": "Tool to import/export Bluetooth pairing keys across OS-es",
+  "main": "src/index.js",
+  "repository": "https://github.com/dapetcu21/bluetooth-cross-pair",
+  "author": "Marius Petcu",
+  "bin": {
+    "bluetooth-cross-pair": "src/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bplist-parser": "^0.1.1"
+  }
+}
