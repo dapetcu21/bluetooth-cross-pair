@@ -22,10 +22,10 @@ in your `PATH`
 
 1. Go and pair your devices with all of your OS'es first
 2. On the last OS you paired with, run
-`bluetooth-cross-pair export keys.json 00112233aabbcc 445566ddeeff`,
+`sudo bluetooth-cross-pair export keys.json 00112233aabbcc 445566ddeeff`,
 where `00112233aabbcc` and `445566ddeeff` are the MAC addresses of your keyboard
 and mouse. You can save any number of devices in one key file.
-3. On all the other OS'es, run `bluetooth-cross-pair import keys.json`
+3. On all the other OS'es, run `sudo bluetooth-cross-pair import keys.json`
 
 ## OS support
 
