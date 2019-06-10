@@ -37,7 +37,7 @@ async function main() {
     }
 
     case "import": {
-      const importFunc = platformCommand('export')
+      const importFunc = platformCommand('import')
       const filename = process.argv[3]
       if (!filename) {
         throw new Error('Second argument needs to be a filename')
@@ -56,4 +56,3 @@ async function main() {
 main().catch(err => {
   console.error(err)
 })
-
