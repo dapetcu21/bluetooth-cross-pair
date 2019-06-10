@@ -6,7 +6,19 @@ OS to the other.
 Why need this? To keep from having to repair my mouse and keyboard whenever
 I switch OS'es in a multi-boot system.
 
-## How do I use it?
+## Cool! How do I install it?
+
+Install Node.js, then:
+
+```bash
+npm install -g bluetooth-cross-pair
+```
+
+On Windows, you'll also need
+[PSExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec)
+in your `PATH`
+
+## Aaand... how do I use it?
 
 1. Go and pair your devices with all of your OS'es first
 2. On the last OS you paired with, run
