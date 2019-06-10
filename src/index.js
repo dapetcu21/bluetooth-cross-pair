@@ -17,22 +17,34 @@ function platformCommand(command) {
   return commandFunc
 }
 
+function usage() {
+  console.log('bluetooth-cross-pair export <key_file> <MAC1> [<MAC2>] [<MAC3>] ... ')
+  console.log('  Exports the Bluetooth keys for client devices identified by <MAC1>, <MAC2>, etc. to file <key_file>')
+  console.log('bluetooth-cross-pair import <key_file>')
+  console.log('  Imports the Bluetooth keys from the <key_file> file')
+}
+
 async function main() {
   const command = process.argv[2]
   switch (command) {
     case "export": {
       const exportFunc = platformCommand('export')
+      const filename = process.argv[3]
+      if (!filename) {
+        throw new Error('An output filename must be provided')
+      }
+
       const results = []
-      for (let i = 3; i < process.argv.length; i++) {
+      for (let i = 4; i < process.argv.length; i++) {
         const mac = process.argv[i].replace(/[^0-9a-fA-F]/g, '').toLowerCase()
         results.push(await exportFunc(mac))
       }
       if (!results.length) {
         throw new Error('At least one MAC address must be provided')
       }
-      const data = JSON.stringify(results, null, 2)
 
-      process.stdout.write(data, 'utf-8')
+      const data = JSON.stringify(results, null, 2)
+      await fs.writeFile(filename, data, 'utf-8')
       break
     }
 
@@ -48,7 +60,8 @@ async function main() {
     }
 
     default: {
-      throw new Error('Invalid command')
+      usage()
+      break
     }
   }
 }
