@@ -6,7 +6,7 @@ OS to the other.
 Why need this? To keep from having to repair my mouse and keyboard whenever
 I switch OS'es in a multi-boot system.
 
-## How I use it?
+## How do I use it?
 
 1. Go and pair your devices with all of your OS'es first
 2. On the last OS you paired with, run
